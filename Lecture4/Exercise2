@@ -16,7 +16,7 @@ public class Exercise2 {
 		System.out.println("The smallest integer " + Math.floor(value));
 		System.out.println("The largest integer " + Math.ceil(value));
 		double area = (value*value) * Math.PI;
-		System.out.println("The area is" + area);
+		System.out.println("The area is " + area);
 		System.out.println("PI " + Math.PI);
 		System.out.println("E " + Math.E);
 	}
