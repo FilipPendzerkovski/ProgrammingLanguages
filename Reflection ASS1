@@ -1,0 +1,52 @@
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
+ 
+public class test {
+    private String s;
+ 
+    
+    public test() {
+        this.s = "Programming languages";
+    }
+ 
+    
+    public void method1() {
+        System.out.println(s);
+    }
+ 
+    
+    public void method2(int n) {
+        System.out.println(n);
+    }
+ 
+    
+    private void method3() {
+        System.out.println("Private method is invoked");
+    }
+}
+ 
+ class Main {
+    public static void main(String[] args) {
+       
+        test test = new test();
+ 
+        
+        Class<test> c1s = test.getClass();
+        System.out.println("The name of class is " + c1s.getName());
+ 
+        try {
+            
+            Constructor<?> constructor = c1s.getConstructor();
+            System.out.println("The name of constructor is " + constructor.getName());
+ 
+           
+            Method[] methods = c1s.getMethods();
+            System.out.println("All method names:");
+            for (Method method : methods) {
+                System.out.println(method.getName());
+            }
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        }
+    }
+}
